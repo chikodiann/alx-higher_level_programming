@@ -1,5 +1,6 @@
 #!/usr/bin/python3
+# Author - Bamidele Adefolaju
+
 def print_last_digit(number):
-    lastDig = int(str(number)[-1])
-    print("{}".format(lastDig), end='')
-    return(lastDig)
+    print(abs(number) % 10, end="")
+    return (abs(number) % 10)

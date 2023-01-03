@@ -1,49 +1,34 @@
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 #include "lists.h"
+
 /**
- * instert_node - inserts in ordered list
- * @head: head of list
- * @number: number to put in
- * Return: address of new node
+ * insert_node - Inserts a number into a sorted singly-linked list.
+ * @head: A pointer the head of the linked list.
+ * @number: The number to insert.
+ * Author - Bamidele Adefolaju
+ * Return: If the function fails - NULL.
+ *         Otherwise - a pointer to the new node.
  */
 listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *tmp,*new;
+	listint_t *node = *head, *new;
 
-	tmp = *head;
 	new = malloc(sizeof(listint_t));
-	if(new == NULL)
-		return(NULL);
+	if (new == NULL)
+		return (NULL);
 	new->n = number;
-	new->next = NULL;
-	if((*head) == NULL)
+
+	if (node == NULL || node->n >= number)
 	{
+		new->next = node;
 		*head = new;
-		return(new);
+		return (new);
 	}
-	else if((*head)->n >= number)
-	{
-		new->next = *head;
-		*head = new;
-		return(new);
-	}
-	else
-	{
-		while(tmp->next != NULL)
-		{
-			if(tmp->next->n >= number)
-			{
-				new->next = tmp->next;
-				tmp->next = new;
-				return (new);
-			}
-			tmp = tmp->next;
-		}
-		new->next = NULL;
-		tmp->next = new;
-		return(new);
-	}
-	return(NULL);
+
+	while (node && node->next && node->next->n < number)
+		node = node->next;
+
+	new->next = node->next;
+	node->next = new;
+
+	return (new);
 }

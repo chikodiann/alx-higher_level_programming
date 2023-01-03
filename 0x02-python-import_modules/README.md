@@ -1,85 +1,55 @@
-## 0x02. Python - import & modules
+# Python - import & modules
 
-**What you should learn from this project**
+In this project, I learned about importing and using functions and creating modules in Python. I further practiced using the builtin function `dir()` and using command line arguments within Python programs.
 
-At the end of this project you are expected to be able to explain to anyone, without the help of Google:
+## Tasks :page_with_curl:
 
-Why Python programming is awesome (don’t forget to tweet today, with the hashtag #pythoniscool :))
-How to import functions from another file
-How to use imported functions
-How to create a module
-How to use the built-in function dir()
-How to prevent code in your script from being executed when imported
-How to use command line arguments with your Python programs
+* **0. Import a simple function from a simple file**
+  * [0-add.py](./0-add.py): Python program that imports the function `def add(a, b):` from the file [add_0.py](./add_0.py) and prints the result of the addition `1 + 2 = 3`.
+  * Output: `<a value> + <b value> = <add(a, b) value>` followed by a new line.
 
-**Exercises**
+* **1. My first toolbox!**
+  * [1-calculation.py](./1-calculation.py): Python program that imports functions from the file [calculator_1.py](./1-calculator.py) and prints the result of the addition, subtraction, multiplication and division of `10` and `5`.
+  * Output: `<a value> <operator> <b value> = <operation(a, b) value>` followed by a new line.
 
-**0. Import a simple function from a simple file**
+* **2. How to make a script dynamic!**
+  * [2-args.py](./2-args.py): Python program that prints the number of and list of its arguments.
+  * Output: `[Number of arguments] argument` (if number is one) or `arguments` (otherwise), followed by:
+    * `:` (or `.` if no argumets were passed), followed by
+    * A new line, followed by
+    * One argument per line - the position of the argument (starting at `1`) followed by `:` followed by the argument value and another new line.
 
-     Write a program that imports the function def add(a, b): from the file add_0.py and prints the result 
-     of the addition 1 + 2 = 3
+* **3. Infinite addition**
+  * [3-infinite_add.py](./3-infinite_add.py): Python program that prints the result of the addition of all arguments.
+  * Output: Sum of the arguments followed by a new line.
 
-* You have to use print function with string format to display integers
-* You have to assign:
-  * the value 1 to a variable called a
-  * the value 2 to a variable called b
-  * and use those two variables as arguments when calling the functions add and print
-  * a and b must be define in 2 different lines: a = 1 and another b = 2
-* You can only use the word add_0 once in your code
-* You are not allowed to use '*' for importing or __import__
-* Your code should not be executed when imported
+* **4. Who are you?**
+  * [4-hidden_discovery.py](./4-hidden_discovery.py): Python program that prints all the names defined by the compiled module `hidden_4.pyc`.
+  * Output: One name per line in alphabetical order.
+  * Names starting with `__` are not printed.
 
+* **5. Everything can be imported**
+  * [5-variable_load.py](./5-variable_load.py): Python program that imports the variable `a` from the file [variable_load_5.py](./variable_load_5.py) and prints its value.
 
-**1. My first toolbox!**
+* **6. Build my own calculator!**
+  * [100-my_calculator.py](./100-my_calculator.py): Python program that imports all functions from the file [calculator_1.py](./calculator_1.py) and handles basic operations.
+  * Usage: `./100-my_calculator.py <a> <operator> <b>` followed by a new line.
+  * Output: `<a> <operator> <b> = <result>` followed by a new line.
+  * The parameter `operator` can be:
+    * `+` for addition
+    * `-` for subtraction
+    * `*` for multiplication
+    * `/` for division
+  * If the operator is none of the above, the function prints `Unknown operator.  Available operators: +, -, *, and /` followed by a new line and exits  with a status value of `1`.
+  * If the number of arguments is not three, the program prints `Usage: ./100-my_calculator.py <a> <operator> <b>` followed by a new line and exits with a status value of `1`.
 
-     Write a program that imports functions from the file calculator_1.py, does some Maths, and prints the result.
+* **7. Easy print**
+  * [101-easy_print.py](./101-easy_print.py): Python program that prints `#pythoniscool` followed by a new line in the standard output.
+  * Without using `print`, `eval`, `open`, or `sys`.
 
-* Do not use the function print (with string format to display integers) more than 4 times
-* You have to define:
-     * the value 10 to a variable a
-     * the value 5 to a variable b
-     * and use those two variables only, as arguments when calling functions (included print)
-     * a and b must be define in 2 different lines: a = 10 and another b = 5
-* Your program should call each of the imported functions. See example bellow for format
-     the word calculator_1 should be used only once in your file
-* You are not allowed to use * for importing or '__import__'
-* Your code should not be executed when imported
+* **8. ByteCode -> Python #3**
+  * [102-magic_calculation.py](./102-magic_calculation.py): Python function matching exactly a bytecode provided by Holberton School.
 
-**2. How to make a script dynamic!**
-
-Write a program that prints the number of and the list of its arguments.
-
-The output should be:
-Number of argument(s) followed by argument (if number is one) or arguments (otherwise), followed by
-: (or . if no argument where passed) followed by
-a new line, followed by (if at least one argument),
-one line per argument:
-the position of the argument (starting at 1) followed by :, followed by the argument value and a new line
-Your code should not be executed when imported
-The number of elements of argv can be retrieved by using: len(argv)
-You do not have to fully understand lists yet, but imagine that argv can be used just like a C array: you can use an index to walk through it. There are other ways (preferred in a near Future), if you know them you can use them.
-
-3. Infinite addition
-
-Write a program that prints the result of the addition of all arguments
-
-The output should be the result of the addition of all arguments, followed by a new line
-You can cast arguments into integers by using int() (you can assume that all arguments can be casted into integers)
-Your code should not be executed when imported
-
-4. Who are you?
-
-Write a program that prints all the names defined by the compiled module hidden_4.pyc (please download it locally).
-
-You should print one name per line, in alpha order
-You should print only names that do not start with __
-Your code should not be executed when imported
-
-5. Everything can be imported
-
-Write a program that imports the variable a from the file variable_load_5.py and prints its value.
-
-You are not allowed to use * for importing or __import__
-Your code should not be executed when imported
-
-
+* **9. Fast alphabet**
+  * [103-fast_alphabet.py](./103-fast_alphabet.py): Python program that prints the alphabet in uppercase, followed by a new line.
+  * Without using loops, conditoinals, `str.join()`, string literals, or system calls.

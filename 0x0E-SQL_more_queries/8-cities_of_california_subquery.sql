@@ -1,4 +1,3 @@
--- cities of california exercise
-SELECT c.id, c.name FROM cities c, states s
-WHERE c.id = s.id
-ORDER BY c.id ASC;
+-- lists all the cities of California that can be found in the database hbtn_0d_usa
+-- lists all rows of a column in a database
+SELECT id, name FROM cities WHERE state_id = (SELECT id FROM states WHERE name = 'California') ORDER BY id ASC;
